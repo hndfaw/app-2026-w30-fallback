@@ -11,7 +11,7 @@ UI on top, deploy + done-pass last.
 | # | Ticket | Status | PR | Date |
 |---|--------|--------|----|------|
 | 1 | Scaffold Vite + React + TypeScript project with npm scripts | done | #1 | 2026-07-24 |
-| 2 | Add Vitest setup, test script, and a smoke test | todo | | |
+| 2 | Add Vitest setup, test script, and a smoke test | done | #2 | 2026-07-24 |
 | 3 | Plan data model: contacts, meeting points, critical items, dependency tags + validation + tests | todo | | |
 | 4 | localStorage persistence with schema version + migration guard + tests | todo | | |
 | 5 | Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests | todo | | |
