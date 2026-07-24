@@ -1,6 +1,6 @@
 # Progress — Fallback
 
-**Status:** Todo
+**Status:** In progress
 
 ## MVP roadmap (mirrors SPEC.md)
 
@@ -11,3 +11,5 @@
 - [ ] Offline-first (localStorage, demo plan, no accounts/keys)
 
 ## Session log
+
+- 2026-07-24: ticket #1 — Scaffold Vite + React + TypeScript project with npm scripts (PR #1)
