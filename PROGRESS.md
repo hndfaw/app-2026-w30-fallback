@@ -15,3 +15,4 @@
 - 2026-07-24: ticket #1 — Scaffold Vite + React + TypeScript project with npm scripts (PR #1)
 - 2026-07-24: ticket #2 — Add Vitest setup, test script, and a smoke test (PR #2)
 - 2026-07-27: ticket #3 — Plan data model: contacts, meeting points, critical items, dependency tags + validation + tests (PR #3)
+- 2026-07-27: ticket #4 — localStorage persistence with schema version + migration guard + tests (PR #4)
