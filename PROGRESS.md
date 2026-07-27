@@ -16,3 +16,4 @@
 - 2026-07-24: ticket #2 — Add Vitest setup, test script, and a smoke test (PR #2)
 - 2026-07-27: ticket #3 — Plan data model: contacts, meeting points, critical items, dependency tags + validation + tests (PR #3)
 - 2026-07-27: ticket #4 — localStorage persistence with schema version + migration guard + tests (PR #4)
+- 2026-07-27: ticket #5 — Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests (PR #5)
