@@ -18,3 +18,4 @@
 - 2026-07-27: ticket #4 — localStorage persistence with schema version + migration guard + tests (PR #4)
 - 2026-07-27: ticket #5 — Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests (PR #5)
 - 2026-08-04: ticket #6 — Single-point-of-failure analyzer: items depending on exactly one channel or person + tests (PR #6)
+- 2026-08-04: ticket #7 — Plan builder UI: contacts and meeting points forms (PR #7)
