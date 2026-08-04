@@ -4,7 +4,7 @@
 
 ## MVP roadmap (mirrors SPEC.md)
 
-- [ ] Plan builder (contacts, meeting points, critical items with dependency tags)
+- [x] Plan builder (contacts, meeting points, critical items with dependency tags)
 - [x] Stress-test engine (channel-loss scenarios + single-point-of-failure flags)
 - [ ] Results view (per-scenario pass/fail with concrete gaps)
 - [ ] Printable fallback card (print-CSS, fridge + wallet)
@@ -19,3 +19,4 @@
 - 2026-07-27: ticket #5 — Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests (PR #5)
 - 2026-08-04: ticket #6 — Single-point-of-failure analyzer: items depending on exactly one channel or person + tests (PR #6)
 - 2026-08-04: ticket #7 — Plan builder UI: contacts and meeting points forms (PR #7)
+- 2026-08-04: ticket #8 — Plan builder UI: critical items with dependency tagging (PR #8)
