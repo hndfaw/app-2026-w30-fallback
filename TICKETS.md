@@ -1,6 +1,6 @@
 # Tickets — Fallback
 
-- **Deadline:** 2026-07-31
+- **Deadline:** 2026-08-07 (extended from 2026-07-31 — missed nights while the runbook was incomplete)
 - **Total:** 14
 - **Cadence:** one PR per build firing, hourly 6–11 PM ET,
   quota = ceil((remaining + opened_today) / days_left) — start-of-day remaining
