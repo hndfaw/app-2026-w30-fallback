@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import ContactsForm from './ContactsForm'
+import CriticalItemsForm from './CriticalItemsForm'
 import MeetingPointsForm from './MeetingPointsForm'
-import { emptyPlan, type Contact, type MeetingPoint, type Plan } from './model'
+import { emptyPlan, type Contact, type CriticalItem, type MeetingPoint, type Plan } from './model'
 import { loadPlan, savePlan } from './storage'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   const setContacts = (contacts: Contact[]) => setPlan((p) => ({ ...p, contacts }))
   const setMeetingPoints = (meetingPoints: MeetingPoint[]) =>
     setPlan((p) => ({ ...p, meetingPoints }))
+  const setItems = (items: CriticalItem[]) => setPlan((p) => ({ ...p, items }))
 
   return (
     <main className="app">
@@ -46,6 +48,7 @@ function App() {
       )}
       <ContactsForm contacts={plan.contacts} onChange={setContacts} />
       <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
+      <CriticalItemsForm items={plan.items} contacts={plan.contacts} onChange={setItems} />
     </main>
   )
 }
