@@ -5,7 +5,7 @@
 ## MVP roadmap (mirrors SPEC.md)
 
 - [ ] Plan builder (contacts, meeting points, critical items with dependency tags)
-- [ ] Stress-test engine (channel-loss scenarios + single-point-of-failure flags)
+- [x] Stress-test engine (channel-loss scenarios + single-point-of-failure flags)
 - [ ] Results view (per-scenario pass/fail with concrete gaps)
 - [ ] Printable fallback card (print-CSS, fridge + wallet)
 - [ ] Offline-first (localStorage, demo plan, no accounts/keys)
@@ -17,3 +17,4 @@
 - 2026-07-27: ticket #3 — Plan data model: contacts, meeting points, critical items, dependency tags + validation + tests (PR #3)
 - 2026-07-27: ticket #4 — localStorage persistence with schema version + migration guard + tests (PR #4)
 - 2026-07-27: ticket #5 — Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests (PR #5)
+- 2026-08-04: ticket #6 — Single-point-of-failure analyzer: items depending on exactly one channel or person + tests (PR #6)

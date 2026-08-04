@@ -15,7 +15,7 @@ UI on top, deploy + done-pass last.
 | 3 | Plan data model: contacts, meeting points, critical items, dependency tags + validation + tests | done | #3 | 2026-07-27 |
 | 4 | localStorage persistence with schema version + migration guard + tests | done | #4 | 2026-07-27 |
 | 5 | Stress-test engine: simulate loss of phone/power/internet/person, compute surviving plan + tests | done | #5 | 2026-07-27 |
-| 6 | Single-point-of-failure analyzer: items depending on exactly one channel or person + tests | todo | | |
+| 6 | Single-point-of-failure analyzer: items depending on exactly one channel or person + tests | done | #6 | 2026-08-04 |
 | 7 | Plan builder UI: contacts and meeting points forms | todo | | |
 | 8 | Plan builder UI: critical items with dependency tagging | todo | | |
 | 9 | Scenario results UI: per-scenario pass/fail with concrete gap list | todo | | |
