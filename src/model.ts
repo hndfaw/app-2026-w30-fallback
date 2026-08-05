@@ -38,6 +38,8 @@ export interface Contact {
   /** True when the number survives phone loss: memorized or written down offline. */
   memorized: boolean
   notes: string
+  /** True when this belongs on the printable fallback card (ticket 10). */
+  essential: boolean
 }
 
 export interface MeetingPoint {
@@ -45,6 +47,8 @@ export interface MeetingPoint {
   label: string
   address: string
   notes: string
+  /** True when this belongs on the printable fallback card (ticket 10). */
+  essential: boolean
 }
 
 export const ITEM_CATEGORIES = ['medication', 'document', 'utility', 'other'] as const
@@ -56,6 +60,8 @@ export interface CriticalItem {
   category: ItemCategory
   dependencies: Dependency[]
   notes: string
+  /** True when this belongs on the printable fallback card (ticket 10). */
+  essential: boolean
 }
 
 export interface Plan {
@@ -73,15 +79,23 @@ export function emptyPlan(): Plan {
 }
 
 export function newContact(init: Partial<Omit<Contact, 'id'>> = {}): Contact {
-  return { id: createId(), name: '', phone: '', memorized: false, notes: '', ...init }
+  return { id: createId(), name: '', phone: '', memorized: false, notes: '', essential: false, ...init }
 }
 
 export function newMeetingPoint(init: Partial<Omit<MeetingPoint, 'id'>> = {}): MeetingPoint {
-  return { id: createId(), label: '', address: '', notes: '', ...init }
+  return { id: createId(), label: '', address: '', notes: '', essential: false, ...init }
 }
 
 export function newCriticalItem(init: Partial<Omit<CriticalItem, 'id'>> = {}): CriticalItem {
-  return { id: createId(), name: '', category: 'other', dependencies: [], notes: '', ...init }
+  return {
+    id: createId(),
+    name: '',
+    category: 'other',
+    dependencies: [],
+    notes: '',
+    essential: false,
+    ...init,
+  }
 }
 
 export interface ValidationIssue {

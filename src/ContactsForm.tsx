@@ -58,6 +58,14 @@ function ContactsForm({ contacts, onChange }: Props) {
                 onChange={(e) => update(contact.id, { notes: e.target.value })}
               />
             </label>
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={contact.essential}
+                onChange={(e) => update(contact.id, { essential: e.target.checked })}
+              />
+              Essential (on fallback card)
+            </label>
             <button type="button" onClick={() => remove(contact.id)} aria-label={`Remove ${contact.name || 'contact'}`}>
               Remove
             </button>

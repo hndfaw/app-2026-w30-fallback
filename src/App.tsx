@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import ContactsForm from './ContactsForm'
 import CriticalItemsForm from './CriticalItemsForm'
+import FallbackCard from './FallbackCard'
 import MeetingPointsForm from './MeetingPointsForm'
 import ScenarioResults from './ScenarioResults'
 import { emptyPlan, type Contact, type CriticalItem, type MeetingPoint, type Plan } from './model'
@@ -51,6 +52,7 @@ function App() {
       <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
       <CriticalItemsForm items={plan.items} contacts={plan.contacts} onChange={setItems} />
       <ScenarioResults plan={plan} />
+      <FallbackCard plan={plan} />
     </main>
   )
 }

@@ -28,7 +28,15 @@ test('add meeting point appends a new blank meeting point', () => {
   expect(onChange).toHaveBeenCalledTimes(1)
   const added = onChange.mock.calls[0][0]
   expect(added).toHaveLength(1)
-  expect(added[0]).toMatchObject({ label: '', address: '', notes: '' })
+  expect(added[0]).toMatchObject({ label: '', address: '', notes: '', essential: false })
+})
+
+test('checking essential calls onChange with the updated meeting point', () => {
+  const school = newMeetingPoint({ label: 'School gate' })
+  const onChange = vi.fn()
+  render(<MeetingPointsForm meetingPoints={[school]} onChange={onChange} />)
+  fireEvent.click(screen.getByLabelText(/essential/i))
+  expect(onChange).toHaveBeenCalledWith([{ ...school, essential: true }])
 })
 
 test('remove deletes the meeting point', () => {

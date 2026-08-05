@@ -76,6 +76,14 @@ function CriticalItemsForm({ items, contacts, onChange }: Props) {
                 onChange={(e) => update(item.id, { notes: e.target.value })}
               />
             </label>
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={item.essential}
+                onChange={(e) => update(item.id, { essential: e.target.checked })}
+              />
+              Essential (on fallback card)
+            </label>
             <fieldset>
               <legend>Depends on</legend>
               {CHANNELS.map((channel) => {

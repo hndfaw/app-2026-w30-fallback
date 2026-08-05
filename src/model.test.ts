@@ -52,6 +52,13 @@ describe('factories', () => {
     expect(item.category).toBe('document')
     expect(item.dependencies).toEqual([])
   })
+
+  test('default to not essential, overridable', () => {
+    expect(newContact().essential).toBe(false)
+    expect(newMeetingPoint().essential).toBe(false)
+    expect(newCriticalItem().essential).toBe(false)
+    expect(newContact({ essential: true }).essential).toBe(true)
+  })
 })
 
 describe('validatePlan', () => {

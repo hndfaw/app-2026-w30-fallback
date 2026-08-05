@@ -28,7 +28,21 @@ test('add item appends a new blank item', () => {
   expect(onChange).toHaveBeenCalledTimes(1)
   const added = onChange.mock.calls[0][0]
   expect(added).toHaveLength(1)
-  expect(added[0]).toMatchObject({ name: '', category: 'other', dependencies: [], notes: '' })
+  expect(added[0]).toMatchObject({
+    name: '',
+    category: 'other',
+    dependencies: [],
+    notes: '',
+    essential: false,
+  })
+})
+
+test('checking essential calls onChange with the updated item', () => {
+  const meds = newCriticalItem({ name: 'Insulin' })
+  const onChange = vi.fn()
+  render(<CriticalItemsForm items={[meds]} contacts={[]} onChange={onChange} />)
+  fireEvent.click(screen.getByLabelText(/essential/i))
+  expect(onChange).toHaveBeenCalledWith([{ ...meds, essential: true }])
 })
 
 test('remove deletes the item', () => {
