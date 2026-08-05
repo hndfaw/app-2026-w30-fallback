@@ -5,7 +5,12 @@ import FallbackCard from './FallbackCard'
 import MeetingPointsForm from './MeetingPointsForm'
 import ScenarioResults from './ScenarioResults'
 import { emptyPlan, type Contact, type CriticalItem, type MeetingPoint, type Plan } from './model'
+import { samplePlan } from './samplePlan'
 import { loadPlan, savePlan } from './storage'
+
+function isEmptyPlan(plan: Plan): boolean {
+  return plan.contacts.length === 0 && plan.meetingPoints.length === 0 && plan.items.length === 0
+}
 
 function App() {
   const [plan, setPlan] = useState<Plan>(emptyPlan)
@@ -47,6 +52,17 @@ function App() {
         <p role="status" className="notice">
           {loadNotice}
         </p>
+      )}
+      {hasLoaded && isEmptyPlan(plan) && (
+        <div className="onboarding" role="region" aria-label="Getting started">
+          <p>
+            New here? Load a filled-in example household to see how contacts, meeting
+            points, and critical items fit together — or just start adding your own below.
+          </p>
+          <button type="button" onClick={() => setPlan(samplePlan())}>
+            Load sample plan
+          </button>
+        </div>
       )}
       <ContactsForm contacts={plan.contacts} onChange={setContacts} />
       <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
