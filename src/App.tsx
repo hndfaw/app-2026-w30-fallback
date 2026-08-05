@@ -41,35 +41,49 @@ function App() {
   const setItems = (items: CriticalItem[]) => setPlan((p) => ({ ...p, items }))
 
   return (
-    <main className="app">
-      <h1>Fallback</h1>
-      <p>
-        Stress-test your household emergency plan against phone, power,
-        internet, or caregiver loss — then print the fallback card that
-        survives all of them.
-      </p>
-      {loadNotice && (
-        <p role="status" className="notice">
-          {loadNotice}
+    <div className="app">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+      <header>
+        <h1>Fallback</h1>
+        <p>
+          Stress-test your household emergency plan against phone, power,
+          internet, or caregiver loss — then print the fallback card that
+          survives all of them.
         </p>
-      )}
-      {hasLoaded && isEmptyPlan(plan) && (
-        <div className="onboarding" role="region" aria-label="Getting started">
-          <p>
-            New here? Load a filled-in example household to see how contacts, meeting
-            points, and critical items fit together — or just start adding your own below.
+      </header>
+      <nav className="section-nav" aria-label="Sections">
+        <a href="#contacts-heading">Contacts</a>
+        <a href="#meeting-points-heading">Meeting points</a>
+        <a href="#critical-items-heading">Critical items</a>
+        <a href="#scenario-results-heading">Stress test results</a>
+        <a href="#fallback-card-heading">Fallback card</a>
+      </nav>
+      <main id="main-content" tabIndex={-1}>
+        {loadNotice && (
+          <p role="status" className="notice">
+            {loadNotice}
           </p>
-          <button type="button" onClick={() => setPlan(samplePlan())}>
-            Load sample plan
-          </button>
-        </div>
-      )}
-      <ContactsForm contacts={plan.contacts} onChange={setContacts} />
-      <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
-      <CriticalItemsForm items={plan.items} contacts={plan.contacts} onChange={setItems} />
-      <ScenarioResults plan={plan} />
-      <FallbackCard plan={plan} />
-    </main>
+        )}
+        {hasLoaded && isEmptyPlan(plan) && (
+          <div className="onboarding" role="region" aria-label="Getting started">
+            <p>
+              New here? Load a filled-in example household to see how contacts, meeting
+              points, and critical items fit together — or just start adding your own below.
+            </p>
+            <button type="button" onClick={() => setPlan(samplePlan())}>
+              Load sample plan
+            </button>
+          </div>
+        )}
+        <ContactsForm contacts={plan.contacts} onChange={setContacts} />
+        <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
+        <CriticalItemsForm items={plan.items} contacts={plan.contacts} onChange={setItems} />
+        <ScenarioResults plan={plan} />
+        <FallbackCard plan={plan} />
+      </main>
+    </div>
   )
 }
 
