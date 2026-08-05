@@ -47,3 +47,34 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
+.scenario-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.scenario-row {
+  padding: 0.75rem;
+  border: 1px solid light-dark(#ddd, #444);
+  border-left-width: 0.35rem;
+  border-radius: 0.5rem;
+}
+
+.scenario-row h3 {
+  margin: 0 0 0.5rem;
+}
+
+.scenario-pass {
+  border-left-color: light-dark(#2a8a3e, #4ade80);
+}
+
+.scenario-fail {
+  border-left-color: light-dark(#b3261e, #f87171);
+}
+
+.gap-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
