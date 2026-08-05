@@ -6,7 +6,7 @@
 
 - [x] Plan builder (contacts, meeting points, critical items with dependency tags)
 - [x] Stress-test engine (channel-loss scenarios + single-point-of-failure flags)
-- [ ] Results view (per-scenario pass/fail with concrete gaps)
+- [x] Results view (per-scenario pass/fail with concrete gaps)
 - [ ] Printable fallback card (print-CSS, fridge + wallet)
 - [ ] Offline-first (localStorage, demo plan, no accounts/keys)
 
@@ -20,3 +20,4 @@
 - 2026-08-04: ticket #6 — Single-point-of-failure analyzer: items depending on exactly one channel or person + tests (PR #6)
 - 2026-08-04: ticket #7 — Plan builder UI: contacts and meeting points forms (PR #7)
 - 2026-08-04: ticket #8 — Plan builder UI: critical items with dependency tagging (PR #8)
+- 2026-08-05: ticket #9 — Scenario results UI: per-scenario pass/fail with concrete gap list (PR #9)
