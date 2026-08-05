@@ -48,6 +48,15 @@ body {
   align-items: center;
 }
 
+.onboarding {
+  border: 1px solid light-dark(#ddd, #444);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
 .scenario-list {
   list-style: none;
   padding: 0;

@@ -71,3 +71,36 @@ test('does not overwrite a saved plan with an empty one while loading', async ()
   const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)!)
   expect(stored.plan.contacts).toHaveLength(1)
 })
+
+test('offers to load a sample plan when there is nothing saved yet', async () => {
+  render(<App />)
+  expect(await screen.findByRole('button', { name: 'Load sample plan' })).toBeTruthy()
+})
+
+test('loading the sample plan fills the forms and hides the onboarding prompt', async () => {
+  render(<App />)
+  fireEvent.click(await screen.findByRole('button', { name: 'Load sample plan' }))
+
+  expect(await screen.findByDisplayValue('Mom')).toBeTruthy()
+  expect(screen.getByDisplayValue('School gate')).toBeTruthy()
+  expect(screen.queryByRole('button', { name: 'Load sample plan' })).toBeFalsy()
+})
+
+test('does not offer the sample plan once a saved plan already has data', async () => {
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify({
+      version: 1,
+      plan: {
+        contacts: [{ id: '1', name: 'Dad', phone: '555-0101', memorized: false, notes: '' }],
+        meetingPoints: [],
+        items: [],
+      },
+    }),
+  )
+
+  render(<App />)
+  await screen.findByDisplayValue('Dad')
+
+  expect(screen.queryByRole('button', { name: 'Load sample plan' })).toBeFalsy()
+})
