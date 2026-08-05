@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ContactsForm from './ContactsForm'
 import CriticalItemsForm from './CriticalItemsForm'
 import MeetingPointsForm from './MeetingPointsForm'
+import ScenarioResults from './ScenarioResults'
 import { emptyPlan, type Contact, type CriticalItem, type MeetingPoint, type Plan } from './model'
 import { loadPlan, savePlan } from './storage'
 
@@ -49,6 +50,7 @@ function App() {
       <ContactsForm contacts={plan.contacts} onChange={setContacts} />
       <MeetingPointsForm meetingPoints={plan.meetingPoints} onChange={setMeetingPoints} />
       <CriticalItemsForm items={plan.items} contacts={plan.contacts} onChange={setItems} />
+      <ScenarioResults plan={plan} />
     </main>
   )
 }
