@@ -50,6 +50,14 @@ function MeetingPointsForm({ meetingPoints, onChange }: Props) {
                 onChange={(e) => update(point.id, { notes: e.target.value })}
               />
             </label>
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={point.essential}
+                onChange={(e) => update(point.id, { essential: e.target.checked })}
+              />
+              Essential (on fallback card)
+            </label>
             <button type="button" onClick={() => remove(point.id)} aria-label={`Remove ${point.label || 'meeting point'}`}>
               Remove
             </button>

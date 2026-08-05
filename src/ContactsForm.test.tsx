@@ -29,7 +29,15 @@ test('add contact appends a new blank contact', () => {
   expect(onChange).toHaveBeenCalledTimes(1)
   const added = onChange.mock.calls[0][0]
   expect(added).toHaveLength(1)
-  expect(added[0]).toMatchObject({ name: '', phone: '', memorized: false, notes: '' })
+  expect(added[0]).toMatchObject({ name: '', phone: '', memorized: false, notes: '', essential: false })
+})
+
+test('checking essential calls onChange with the updated contact', () => {
+  const mom = newContact({ name: 'Mom' })
+  const onChange = vi.fn()
+  render(<ContactsForm contacts={[mom]} onChange={onChange} />)
+  fireEvent.click(screen.getByLabelText(/essential/i))
+  expect(onChange).toHaveBeenCalledWith([{ ...mom, essential: true }])
 })
 
 test('remove deletes the contact', () => {

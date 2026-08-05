@@ -107,6 +107,20 @@ describe('migration guard', () => {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)!)
     expect(stored.version).toBe(SCHEMA_VERSION)
   })
+
+  test('migrates a v1 envelope (no essential flag) forward, defaulting essential to false', () => {
+    const plan = samplePlan()
+    const v1Plan = {
+      contacts: plan.contacts.map(({ essential: _essential, ...rest }) => rest),
+      meetingPoints: plan.meetingPoints.map(({ essential: _essential, ...rest }) => rest),
+      items: plan.items.map(({ essential: _essential, ...rest }) => rest),
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, plan: v1Plan }))
+    const result = loadPlan()
+    expect(result.status).toBe('loaded')
+    expect(result.status === 'loaded' && result.migratedFrom).toBe(1)
+    expect(result.plan).toEqual(plan)
+  })
 })
 
 describe('isPlanShaped', () => {

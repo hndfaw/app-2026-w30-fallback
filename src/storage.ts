@@ -9,7 +9,7 @@
 import { emptyPlan, isChannel, type Dependency, type Plan } from './model'
 
 export const STORAGE_KEY = 'fallback-plan'
-export const SCHEMA_VERSION = 1
+export const SCHEMA_VERSION = 2
 
 interface Envelope {
   version: number
@@ -31,6 +31,20 @@ export type LoadResult =
  */
 const MIGRATIONS: Record<number, (data: unknown) => unknown> = {
   0: (data) => data,
+  // v1 plans predate the "essential" flag (ticket 10) — default every entry to not essential.
+  1: (data) => {
+    if (!isRecord(data)) return data
+    const addEssential = (list: unknown) =>
+      Array.isArray(list)
+        ? list.map((entry) => (isRecord(entry) ? { essential: false, ...entry } : entry))
+        : list
+    return {
+      ...data,
+      contacts: addEssential(data.contacts),
+      meetingPoints: addEssential(data.meetingPoints),
+      items: addEssential(data.items),
+    }
+  },
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -60,17 +74,22 @@ export function isPlanShaped(value: unknown): value is Plan {
       (c) =>
         isRecord(c) &&
         hasStringFields(c, ['id', 'name', 'phone', 'notes']) &&
-        typeof c.memorized === 'boolean',
+        typeof c.memorized === 'boolean' &&
+        typeof c.essential === 'boolean',
     ) &&
     meetingPoints.every(
-      (p) => isRecord(p) && hasStringFields(p, ['id', 'label', 'address', 'notes']),
+      (p) =>
+        isRecord(p) &&
+        hasStringFields(p, ['id', 'label', 'address', 'notes']) &&
+        typeof p.essential === 'boolean',
     ) &&
     items.every(
       (item) =>
         isRecord(item) &&
         hasStringFields(item, ['id', 'name', 'category', 'notes']) &&
         Array.isArray(item.dependencies) &&
-        item.dependencies.every(isDependency),
+        item.dependencies.every(isDependency) &&
+        typeof item.essential === 'boolean',
     )
   )
 }
