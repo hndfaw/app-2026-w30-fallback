@@ -19,6 +19,69 @@ body {
   padding: 2rem 1rem;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: light-dark(#fff, #222);
+  color: light-dark(#111, #eee);
+  border: 1px solid light-dark(#ddd, #444);
+  border-radius: 0.25rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid light-dark(#ddd, #444);
+}
+
+.section-nav a {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid light-dark(#ddd, #444);
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+.section-nav a:hover {
+  background: light-dark(#f0f0f0, #333);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid light-dark(#1a5fb4, #8ab4f8);
+  outline-offset: 2px;
+}
+
+button {
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .entry-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entry-row label,
+  .entry-row input[type='text'] {
+    width: 100%;
+  }
+}
+
 .entry-list {
   list-style: none;
   padding: 0;
