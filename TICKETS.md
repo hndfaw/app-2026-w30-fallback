@@ -19,7 +19,7 @@ UI on top, deploy + done-pass last.
 | 7 | Plan builder UI: contacts and meeting points forms | done | #7 | 2026-08-04 |
 | 8 | Plan builder UI: critical items with dependency tagging | done | #8 | 2026-08-04 |
 | 9 | Scenario results UI: per-scenario pass/fail with concrete gap list | done | #9 | 2026-08-05 |
-| 10 | Printable fallback card: essentials selection + print-CSS layout (fridge + wallet) | todo | | |
+| 10 | Printable fallback card: essentials selection + print-CSS layout (fridge + wallet) | done | #10 | 2026-08-05 |
 | 11 | Sample demo plan + empty-state onboarding | todo | | |
 | 12 | Polish pass: navigation, responsive layout, a11y basics | todo | | |
 | 13 | GitHub Pages deploy + CI: vite base path, ci.yml (vitest+build on PR), deploy.yml | todo | | |
