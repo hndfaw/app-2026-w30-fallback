@@ -21,7 +21,7 @@ UI on top, deploy + done-pass last.
 | 9 | Scenario results UI: per-scenario pass/fail with concrete gap list | done | #9 | 2026-08-05 |
 | 10 | Printable fallback card: essentials selection + print-CSS layout (fridge + wallet) | done | #10 | 2026-08-05 |
 | 11 | Sample demo plan + empty-state onboarding | done | #11 | 2026-08-05 |
-| 12 | Polish pass: navigation, responsive layout, a11y basics | todo | | |
+| 12 | Polish pass: navigation, responsive layout, a11y basics | done | #12 | 2026-08-05 |
 | 13 | GitHub Pages deploy + CI: vite base path, ci.yml (vitest+build on PR), deploy.yml | todo | | |
 | 14 | Definition-of-done pass: LICENSE, live-URL check, machine cleanup, mark Done | todo | | |
 
