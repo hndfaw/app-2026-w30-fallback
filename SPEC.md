@@ -18,16 +18,16 @@ Households (parents, caregivers, people managing elder care) whose emergency pla
 working with no phone, no power, and no internet.
 
 ## MVP features (the week's roadmap)
-- [ ] **Plan builder** — enter contacts, meeting points, and critical items (meds, documents,
+- [x] **Plan builder** — enter contacts, meeting points, and critical items (meds, documents,
       utility shutoffs), tagging each with what it depends on: phone, power, internet, or a
       specific person
-- [ ] **Stress-test engine** — simulate losing each channel (and combinations); compute what
+- [x] **Stress-test engine** — simulate losing each channel (and combinations); compute what
       part of the plan survives and flag every single point of failure
-- [ ] **Results view** — per-scenario pass/fail with the concrete gaps ("no memorized number
+- [x] **Results view** — per-scenario pass/fail with the concrete gaps ("no memorized number
       for Dad", "med schedule known only by one caregiver")
-- [ ] **Printable fallback card** — a print-CSS card (fridge + wallet size) carrying only the
+- [x] **Printable fallback card** — a print-CSS card (fridge + wallet size) carrying only the
       offline-essential info, generated from the plan
-- [ ] **Offline-first** — localStorage persistence, sample demo plan, no accounts, no keys
+- [x] **Offline-first** — localStorage persistence, sample demo plan, no accounts, no keys
 
 ## Stretch (only if time)
 - Combination scenarios (phone + power together), severity weighting
@@ -50,8 +50,8 @@ real single point of failure flagged, and print a legible fallback card within 1
 entirely offline after first load.
 
 Plus the standing lab bar (every weekly app, non-negotiable):
-- [ ] Deployed at a public URL (or installable release) that actually responds
-- [ ] CI green: tests + build run on every PR
-- [ ] README explains how to run, deploy, and use it; LICENSE present
-- [ ] Machine cleanup: dev servers killed, test-only installs removed, no stray
+- [x] Deployed at a public URL (or installable release) that actually responds
+- [x] CI green: tests + build run on every PR
+- [x] README explains how to run, deploy, and use it; LICENSE present
+- [x] Machine cleanup: dev servers killed, test-only installs removed, no stray
       processes/ports/tabs, merged ticket branches pruned

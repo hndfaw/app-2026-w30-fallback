@@ -1,6 +1,6 @@
 # Progress — Fallback
 
-**Status:** In progress
+**Status:** Done
 
 ## MVP roadmap (mirrors SPEC.md)
 
@@ -25,3 +25,4 @@
 - 2026-08-05: ticket #11 — Sample demo plan + empty-state onboarding (PR #11)
 - 2026-08-05: ticket #12 — Polish pass: navigation, responsive layout, a11y basics (PR #12)
 - 2026-08-05: ticket #13 — GitHub Pages deploy + CI: vite base path, ci.yml, deploy.yml (PR #13)
+- 2026-08-05: ticket #14 — Definition-of-done pass: LICENSE, README, live-URL check, machine cleanup (PR #14)
