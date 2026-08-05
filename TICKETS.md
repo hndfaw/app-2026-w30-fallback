@@ -22,7 +22,7 @@ UI on top, deploy + done-pass last.
 | 10 | Printable fallback card: essentials selection + print-CSS layout (fridge + wallet) | done | #10 | 2026-08-05 |
 | 11 | Sample demo plan + empty-state onboarding | done | #11 | 2026-08-05 |
 | 12 | Polish pass: navigation, responsive layout, a11y basics | done | #12 | 2026-08-05 |
-| 13 | GitHub Pages deploy + CI: vite base path, ci.yml (vitest+build on PR), deploy.yml | todo | | |
+| 13 | GitHub Pages deploy + CI: vite base path, ci.yml (vitest+build on PR), deploy.yml | done | #13 | 2026-08-05 |
 | 14 | Definition-of-done pass: LICENSE, live-URL check, machine cleanup, mark Done | todo | | |
 
 ## Specs for tickets 13–14 (so any Builder session implements exactly this)

@@ -24,3 +24,4 @@
 - 2026-08-05: ticket #10 — Printable fallback card: essentials selection + print-CSS layout (fridge + wallet) (PR #10)
 - 2026-08-05: ticket #11 — Sample demo plan + empty-state onboarding (PR #11)
 - 2026-08-05: ticket #12 — Polish pass: navigation, responsive layout, a11y basics (PR #12)
+- 2026-08-05: ticket #13 — GitHub Pages deploy + CI: vite base path, ci.yml, deploy.yml (PR #13)
