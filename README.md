@@ -37,5 +37,21 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the app 
 publishes `dist/` to GitHub Pages. Every pull request runs `.github/workflows/ci.yml`
 (tests + build) before merge.
 
-Built one PR per evening by [weekly-lab](https://github.com/topics/weekly-lab) — week 2026-W30.
-See `SPEC.md` for the scope and `TICKETS.md` for the plan.
+`vite.config.ts` sets `base: '/app-2026-w30-fallback/'` so assets resolve under the
+project-Pages subpath; change it if you fork under a different name.
+
+## Project layout
+
+```
+src/core/        pure logic — plan model + validation, stress-test engine,
+                 single-point-of-failure analyzer, localStorage layer
+src/components/  plan builder forms, results view, fallback card
+src/App.tsx      the shell wiring it together
+```
+
+The engine and analyzer are pure functions with unit tests next to each module;
+React is only the shell around them.
+
+## License
+
+[MIT](./LICENSE)
